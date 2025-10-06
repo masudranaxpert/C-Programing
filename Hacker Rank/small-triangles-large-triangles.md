@@ -1,15 +1,12 @@
 # Problem: Small Triangles, Large Triangles
 
-## 📖 Description
-You are given the lengths of the sides of multiple triangles.  
-The task is to **sort the triangles in ascending order of their areas**.
+## Link : [Small Triangles, Large Triangles on HackerRank](https://www.hackerrank.com/challenges/small-triangles-large-triangles/problem?isFullScreen=true)
+
+## Concept
+**Bubble Sort** algorithm.  
 ---
 
-## 💡 Concept
-The sorting is implemented using the **Bubble Sort** algorithm.  
----
-
-## 🖥️ Solution Code
+## Solution Code
 
 ```c
 #include <stdio.h>
@@ -18,14 +15,14 @@ The sorting is implemented using the **Bubble Sort** algorithm.
 void sort_by_area(triangle* tr, int n) {
     float area[n];
 
-    // Step 1: Calculate area for each triangle
+    //  Calculate area 
     for (int i = 0; i < n; i++) {
         float p = (tr[i].a + tr[i].b + tr[i].c) / 2.0;
         float s = sqrt(p * (p - tr[i].a) * (p - tr[i].b) * (p - tr[i].c));
         area[i] = s; 
     }
 
-    // Step 2: Bubble Sort based on area
+    // Bubble Sort based on area
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - 1 - i; j++) {
             if (area[j] > area[j + 1]) {
